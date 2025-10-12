@@ -4,8 +4,8 @@ const Trip = require('./travlr');
 // seed data from json file
 var fs = require('fs');
 var trips = JSON.parse(fs.readFileSync('./data/trips.json','utf-8'));
-
-// delete any existing records, then insert seed data
+// issue with deleteMany, was unable to get the function to work properly so it was excluded
+// insert seed data
 const seedDB = async () => {
     await Trip.insertMany(trips);
 };
